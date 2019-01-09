@@ -55,7 +55,6 @@ public static WebDriver driver;
 		driver.manage().window().maximize();
 		driver.navigate().to(ConfigDetails.URL);
 		driver.navigate().refresh();
-		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	
 	//AfterMethod close browser
