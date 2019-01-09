@@ -26,19 +26,19 @@ public class LoginPage {
 			
 			public static WebElement username_txtbox(WebDriver driver)
 			{
-				element=driver.findElement(By.xpath("//input[@id='email']"));//Element1: Username textbox
+				element=driver.findElement(By.cssSelector("input[name='email']"));//Element1: Username textbox
 				return element;
 			}
 			
 			public static WebElement password_txtbox(WebDriver driver)
 			{
-				element=driver.findElement(By.xpath("//input[@id='pass']"));//Element2: Password textbox
+				element=driver.findElement(By.cssSelector("input[name='pass']"));//Element2: Password textbox
 				return element;
 			}
 			
 			public static WebElement login_button(WebDriver driver)
 			{
-				element=driver.findElement(By.xpath("//label[@id='loginbutton']"));//Element3: Log in button
+				element=driver.findElement(By.cssSelector("input[type='submit']"));//Element3: Log in button
 				return element;
 			}
 			

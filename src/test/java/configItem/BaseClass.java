@@ -1,10 +1,13 @@
 package configItem;
 
-import java.util.concurrent.TimeUnit;
+//import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 /**
  *
@@ -26,13 +29,34 @@ public static WebDriver driver;
 	
 	//BeforeMethod opens browser
 	@BeforeMethod
-	public void start() 
+	@Parameters("browsers")
+	public void start(String browserName) 
 	{
+		if(browserName.equalsIgnoreCase("ie"))
+		{
+		System.setProperty("webdriver.ie.driver", "C:\\Program Files\\drivers\\IEDriverServer.exe");
+		DesiredCapabilities caps = DesiredCapabilities.internetExplorer();
+		caps.setCapability("nativeEvents", false);
+		caps.setCapability("ignoreZoomSetting", true);
+		driver = new InternetExplorerDriver(caps);
+		BaseClass.initiatebrowser();
+		}
+		else if(browserName.equalsIgnoreCase("chrome"))
+		{
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get(ConfigDetails.URL);
-		driver.manage().window().maximize();
+		BaseClass.initiatebrowser();
+		}
+		
 	 }
+	
+	public static void initiatebrowser()
+	{
+		driver.manage().window().maximize();
+		driver.navigate().to(ConfigDetails.URL);
+		driver.navigate().refresh();
+		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
 	
 	//AfterMethod close browser
 	@AfterMethod

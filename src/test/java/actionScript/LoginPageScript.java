@@ -1,5 +1,10 @@
 package actionScript;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pageObject.LoginPage;
 import utility.CaptureScreenshot;
@@ -29,11 +34,13 @@ public class LoginPageScript {
 
 	public static void loginpageexecute(WebDriver driver,String sUsername,String sPassword)
 	{
-			Assert.assertEquals("Facebook - Log masuk atau daftar", driver.getTitle());//Step1: Open browser and Verify Page Title
+			String titleloginpg=driver.getTitle();
+			Assert.assertEquals("Facebook - Log masuk atau daftar", titleloginpg);//Step1: Open browser and Verify Page Title
 			LoginPage.username_txtbox(driver).sendKeys(sUsername);//Step2: Enter username
 			LoginPage.password_txtbox(driver).sendKeys(sPassword);//Step3: Enter password
 			LoginPage.login_button(driver).click(); //Step4: Click on login button
 			String title=driver.getTitle();
+			System.out.println(title);
 			boolean titlefound=title.contains("Log masuk ke Facebook | Facebook");//Step5: Check title display Log masuk ke Facebook | Facebook
 			if(titlefound==true)
 			{
