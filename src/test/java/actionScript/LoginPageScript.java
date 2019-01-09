@@ -53,7 +53,6 @@ public class LoginPageScript {
 				//Step7: If No, valid credential
 				System.out.println("Positive test case Passed: User able to login");//Display message in console
 				CaptureScreenshot.screenshotsnap(driver, "valid login");//capture screenshot
-
 			}		
 	}
 	
