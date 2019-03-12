@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="none" name="Failed suite [Suite]">
-  <parameter name="browsers" value="chrome"/>
-  <test parallel="none" name="IE Test(failed)">
+<suite name="Failed suite [Suite]" parallel="none">
+  <parameter name="browsers" value="ie"/>
+  <test name="Chrome Test(failed)" parallel="none">
     <parameter name="browsers" value="chrome"/>
     <classes>
-      <class name="testCase.LoginPageTC">
+      <class name="testCase.LoginTC">
         <methods>
           <include name="start"/>
-          <include name="Logintestcase" invocation-numbers="0 1"/>
+          <include name="start"/>
+          <include name="initiatebrowser"/>
+          <include name="initiatebrowser"/>
+          <include name="teardown"/>
           <include name="teardown"/>
         </methods>
-      </class> <!-- testCase.LoginPageTC -->
+      </class> <!-- testCase.LoginTC -->
+      <class name="testCase.MyaccountTC">
+        <methods>
+          <include name="start"/>
+          <include name="initiatebrowser"/>
+          <include name="teardown"/>
+          <include name="verifyMyAccountpage"/>
+        </methods>
+      </class> <!-- testCase.MyaccountTC -->
     </classes>
-  </test> <!-- IE Test(failed) -->
+  </test> <!-- Chrome Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

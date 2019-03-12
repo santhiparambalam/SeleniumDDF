@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="testCase.LoginPageTC">
+      <class name="testCase.LoginTC">
         <methods>
           <include name="Logintestcase"/>
         </methods>
-      </class> <!-- testCase.LoginPageTC -->
+      </class> <!-- testCase.LoginTC -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

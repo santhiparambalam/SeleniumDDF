@@ -1,48 +1,56 @@
 package pageObject;
 
-/**
- *The LoginPage class contains web elements 
- *found in login page
- *
- *Element1: Username textbox
- *Element2: Password textbox
- *Element3: Log in button
- *
- * @param	none
- * @return  none
- * @author  santhiparambalam
- * @version 1.0 07/12/18
- */
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 
 public class LoginPage {
-	//Login Page object model-> list all the elements in Login
-			private static WebElement element=null;
-			
-			
-			public static WebElement username_txtbox(WebDriver driver)
+	
+			public LoginPage(WebDriver driver)
 			{
-				element=driver.findElement(By.cssSelector("input[name='email']"));//Element1: Username textbox
-				return element;
+				PageFactory.initElements(driver, this);
 			}
 			
-			public static WebElement password_txtbox(WebDriver driver)
+			@FindBy(how=How.CSS, using="a[class='login']")
+			public WebElement sign_in_button;
+			
+			@FindBy(how=How.CSS, using="a[class='logout']")
+			public WebElement log_out_button;
+			
+			@FindBy(how=How.CSS, using="input[name='email']")
+			public WebElement username_textbox;
+			
+			@FindBy(how=How.NAME, using="passwd")
+			public WebElement password_textbox;
+			
+			@FindBy(how=How.ID, using="SubmitLogin")
+			public WebElement login_button;
+			
+			public void click_signinbutton()
 			{
-				element=driver.findElement(By.cssSelector("input[name='pass']"));//Element2: Password textbox
-				return element;
+				sign_in_button.click();
 			}
 			
-			public static WebElement login_button(WebDriver driver)
+			public void click_logoutbutton()
 			{
-				element=driver.findElement(By.cssSelector("input[type='submit']"));//Element3: Log in button
-				return element;
+				log_out_button.click();
 			}
 			
+			public void enter_uname(String username)
+			{
+				username_textbox.sendKeys(username);
+			}
 			
-
-
+			public void enter_pword(String password)
+			{
+				password_textbox.sendKeys(password);
+			}
+			
+			public void click_login()
+			{
+				login_button.click();
+			}
 }

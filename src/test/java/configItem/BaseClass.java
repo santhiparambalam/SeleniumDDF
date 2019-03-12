@@ -1,34 +1,25 @@
 package configItem;
 
-//import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
-/**
- *
- *The BaseClass class provides after and before method 
- *
- *
- *BeforeMethod opens browser
- *AfterMethod close browser
- *
- * @param	none
- * @return  none
- * @author  santhiparambalam
- * @version 1.0 07/12/18
- */
+import pageObject.LoginPage;
+import utils.ConfigReader;
 
 
 public class BaseClass {
-public static WebDriver driver;
+	public static WebDriver driver;
+	public ConfigReader configreader=new ConfigReader();
+
 	
-	//BeforeMethod opens browser
-	@BeforeMethod
+	@BeforeClass
 	@Parameters("browsers")
 	public void start(String browserName) 
 	{
@@ -39,26 +30,25 @@ public static WebDriver driver;
 		caps.setCapability("nativeEvents", false);
 		caps.setCapability("ignoreZoomSetting", true);
 		driver = new InternetExplorerDriver(caps);
-		BaseClass.initiatebrowser();
+		driver.manage().window().maximize();
 		}
 		else if(browserName.equalsIgnoreCase("chrome"))
 		{
 		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
-		BaseClass.initiatebrowser();
+		driver.manage().window().maximize();
 		}
-		
 	 }
 	
+	@BeforeMethod
 	public static void initiatebrowser()
 	{
-		driver.manage().window().maximize();
-		driver.navigate().to(ConfigDetails.URL);
+		driver.navigate().to(ConfigReader.getURL());
 		driver.navigate().refresh();
 	}
 	
-	//AfterMethod close browser
-	@AfterMethod
+	
+	@AfterClass
 	 public void teardown() 
 	{
 	  	 driver.quit();

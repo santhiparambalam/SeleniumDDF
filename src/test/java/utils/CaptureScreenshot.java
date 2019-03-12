@@ -1,4 +1,4 @@
-package utility;
+package utils;
 
 /**
  *The screenshotsnap contains method to capture screenshot
@@ -16,7 +16,6 @@ package utility;
 
 import java.io.File;
 import java.io.IOException;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -24,15 +23,16 @@ import org.openqa.selenium.WebDriver;
 
 
 public class CaptureScreenshot {
-	public static void screenshotsnap(WebDriver driver, String name)
+	
+	public static void captureScreenshot(WebDriver driver, String Name)
 	{
-		TakesScreenshot ts=(TakesScreenshot)driver;		
+		TakesScreenshot ts=(TakesScreenshot)driver;
 		File source=ts.getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.copyFile(source, new File("./Screenshots/"+name+".png"));
+			FileUtils.copyFile(source, new File("./Screenshots/"+Name+".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
+			throw new RuntimeException("Unable to create screenshot");
 		}
 	}
-
 }

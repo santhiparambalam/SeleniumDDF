@@ -5,14 +5,15 @@
   <test name="Chrome Test">
   	<parameter name="browsers" value="chrome"/>
   	<classes>
-      <class name="testCase.LoginPageTC"/>
+      <class name="testCase.LoginTC"/>
+      <class name="testCase.MyaccountTC"/>
     </classes>
   </test> <!-- Test -->
     
   <test name="IE Test">
   	<parameter name="browsers" value="ie"/>
   	<classes>
-      <class name="testCase.LoginPageTC"/>
+      <class name="testCase.LoginTC"/>
     </classes>
   </test> <!-- Test -->
   
