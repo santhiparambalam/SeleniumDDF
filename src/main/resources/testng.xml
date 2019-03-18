@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="none">
+<suite name="Suite" parallel="none" preserve-order="true">
+<parameter name="browsers" value="chrome"/>
 
-  <test name="Chrome Test">
-  	<parameter name="browsers" value="chrome"/>
+  <test name="Invalid Login Test">
   	<classes>
-      <class name="testCase.LoginTC"/>
-      <class name="testCase.MyaccountTC"/>
+      <class name="testCase.logintestcase.InvalidLoginTest"/>
     </classes>
-  </test> <!-- Test -->
-    
-  <test name="IE Test">
-  	<parameter name="browsers" value="ie"/>
+  </test>
+        
+  <test name="Valid Login Test">
   	<classes>
-      <class name="testCase.LoginTC"/>
+      <class name="testCase.logintestcase.ValidLoginTest"/>
     </classes>
-  </test> <!-- Test -->
+  </test>
   
-</suite> <!-- Suite -->
+   <test name="Verify MyAccountPage Test">
+  	<classes>
+      <class name="testCase.logintestcase.ValidLoginTest"/>
+      <class name="testCase.myaccounttestcase.MyaccountTC"/>
+    </classes>
+  </test>
+</suite>

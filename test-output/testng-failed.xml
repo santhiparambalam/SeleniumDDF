@@ -1,28 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" parallel="none">
-  <parameter name="browsers" value="ie"/>
-  <test name="Chrome Test(failed)" parallel="none">
-    <parameter name="browsers" value="chrome"/>
+  <parameter name="browsers" value="chrome"/>
+  <test name="Valid Login Test(failed)" parallel="none">
     <classes>
-      <class name="testCase.LoginTC">
+      <class name="testCase.logintestcase.ValidLoginTest">
         <methods>
-          <include name="start"/>
-          <include name="start"/>
+          <include name="validLoginTest" invocation-numbers="0"/>
           <include name="initiatebrowser"/>
           <include name="initiatebrowser"/>
           <include name="teardown"/>
-          <include name="teardown"/>
+          <include name="signout"/>
+          <include name="signout"/>
+          <include name="start"/>
         </methods>
-      </class> <!-- testCase.LoginTC -->
-      <class name="testCase.MyaccountTC">
+      </class> <!-- testCase.logintestcase.ValidLoginTest -->
+      <class name="testCase.logintestcase.InvalidLoginTest">
         <methods>
-          <include name="start"/>
+          <include name="initiatebrowser"/>
+          <include name="signout"/>
+        </methods>
+      </class> <!-- testCase.logintestcase.InvalidLoginTest -->
+    </classes>
+  </test> <!-- Valid Login Test(failed) -->
+  <test name="Verify MyAccountPage Test(failed)" parallel="none">
+    <classes>
+      <class name="testCase.logintestcase.ValidLoginTest">
+        <methods>
+          <include name="validLoginTest" invocation-numbers="0"/>
+          <include name="initiatebrowser"/>
           <include name="initiatebrowser"/>
           <include name="teardown"/>
+          <include name="signout"/>
+          <include name="signout"/>
+          <include name="start"/>
+        </methods>
+      </class> <!-- testCase.logintestcase.ValidLoginTest -->
+      <class name="testCase.myaccounttestcase.MyaccountTC">
+        <methods>
           <include name="verifyMyAccountpage"/>
         </methods>
-      </class> <!-- testCase.MyaccountTC -->
+      </class> <!-- testCase.myaccounttestcase.MyaccountTC -->
+      <class name="testCase.logintestcase.InvalidLoginTest">
+        <methods>
+          <include name="initiatebrowser"/>
+          <include name="signout"/>
+        </methods>
+      </class> <!-- testCase.logintestcase.InvalidLoginTest -->
     </classes>
-  </test> <!-- Chrome Test(failed) -->
+  </test> <!-- Verify MyAccountPage Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

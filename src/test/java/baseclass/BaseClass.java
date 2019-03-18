@@ -1,25 +1,26 @@
-package configItem;
+package baseclass;
 
+import java.util.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
-
-import pageObject.LoginPage;
+import pageobject.LoginPage;
 import utils.ConfigReader;
 
 
 public class BaseClass {
 	public static WebDriver driver;
 	public ConfigReader configreader=new ConfigReader();
+	public static LoginPage loginpage;
 
 	
-	@BeforeClass
+	@BeforeSuite
 	@Parameters("browsers")
 	public void start(String browserName) 
 	{
@@ -40,15 +41,33 @@ public class BaseClass {
 		}
 	 }
 	
-	@BeforeMethod
+	@BeforeTest
 	public static void initiatebrowser()
 	{
 		driver.navigate().to(ConfigReader.getURL());
-		driver.navigate().refresh();
+		loginpage=new LoginPage(driver);
+		loginpage.click_signinbutton();
+		//driver.navigate().refresh();
 	}
 	
 	
-	@AfterClass
+	@AfterTest
+	public static void signout() throws NoSuchElementException
+	{
+		try 
+		{
+			if(loginpage.log_out_button.isDisplayed()) 
+		     {
+				loginpage.log_out_button.click();
+		     }
+		}
+		catch (Exception e)
+		{
+		    //do nothing
+		}
+	}
+	
+	@AfterSuite
 	 public void teardown() 
 	{
 	  	 driver.quit();

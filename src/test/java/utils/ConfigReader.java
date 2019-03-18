@@ -58,7 +58,6 @@ public class ConfigReader {
 	public static String getURL()
 	{
 		String url=Config.getProperty("URL");
-		System.out.println(url);
 		if (url!=null) return url;
 		else throw new RuntimeException("Driverpath is not found");
 	}
@@ -84,10 +83,17 @@ public class ConfigReader {
 		else throw new RuntimeException("Test data excel file name is not found");
 	}
 	
-	public static String getsheetname()
+	public static String getvalidloginsheet()
 	{
-		String sheetName=Config.getProperty("sheet");
-		if (sheetName!=null) return sheetName;
-		else throw new RuntimeException("Excel sheet name is not found");
+		String validLoginsheet=Config.getProperty("validloginsheet");
+		if (validLoginsheet!=null) return validLoginsheet;
+		else throw new RuntimeException("Valid login sheet is not found");
+	}
+	
+	public static String getinvalidloginsheet()
+	{
+		String invalidLoginsheet=Config.getProperty("invalidloginsheet");
+		if (invalidLoginsheet!=null) return invalidLoginsheet;
+		else throw new RuntimeException("Invalid login sheet is not found");
 	}
 }

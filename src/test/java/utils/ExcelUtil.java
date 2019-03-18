@@ -23,12 +23,13 @@ public class ExcelUtil {
 	private static File file;
 	private static XSSFWorkbook wb;
 	private static XSSFSheet ws;
+	private static FileInputStream fis;
 
 	public ExcelUtil(String path)
 	{
 		try {
 		file=new File(path);
-		FileInputStream fis = new FileInputStream(file);
+		fis = new FileInputStream(file);
 		wb=new XSSFWorkbook(fis);
 		} catch (IOException e) {
 			System.out.println("Could not read the Excel sheet");
@@ -40,8 +41,7 @@ public class ExcelUtil {
 	{
 		ws=wb.getSheet(sheet);
 		int lastrow=ws.getLastRowNum();
-		int rowcount=lastrow+1;
-		return rowcount;
+		return lastrow;
 	}
 	
 	public static int getcolcount(String sheet)
@@ -58,7 +58,7 @@ public class ExcelUtil {
 		return data;
 	}
 	
-	public static void closeExcel(FileInputStream fis)
+	public static void closeExcel()
 	{
 		try {
 			fis.close();

@@ -1,4 +1,4 @@
-package pageObject;
+package pageobject;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,19 +13,19 @@ public class MyAccountPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(how=How.CSS, using="a[title='Orders']")
+	@FindBy(how=How.CSS, using="a[href='http://automationpractice.com/index.php?controller=history']")
 	private WebElement orders_button;
 	
-	@FindBy(how=How.CSS, using="a[title='Credit slips']")
+	@FindBy(how=How.CSS, using="a[href='http://automationpractice.com/index.php?controller=order-slip']")
 	private WebElement creditslips_button;
 	
-	@FindBy(how=How.CSS, using="a[title='Addresses']")
+	@FindBy(how=How.CSS, using="a[href='http://automationpractice.com/index.php?controller=addresses']")
 	private WebElement addresses_button;
 	
-	@FindBy(how=How.CSS, using="a[title='Information']")
+	@FindBy(how=How.CSS, using="a[href='http://automationpractice.com/index.php?controller=identity']")
 	private WebElement information_button;
 	
-	@FindBy(how=How.CSS, using="a[title='My wishlists']")
+	@FindBy(how=How.CSS, using="a[href='http://automationpractice.com/index.php?fc=module&module=blockwishlist&controller=mywishlist']")
 	private WebElement mywishlist_button;
 		
 
