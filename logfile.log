@@ -1,0 +1,52 @@
+2019-03-20 10:30:24,066 INFO  [Log] Navigate to URL 
+2019-03-20 10:30:27,477 INFO  [Log] Click on sign in button 
+2019-03-20 10:30:28,159 INFO  [Log] **************************************************************************************** 
+2019-03-20 10:30:28,159 INFO  [Log] $$$$$$$$$$$$$$$$$$$$$                 Invalid login test       $$$$$$$$$$$$$$$$$$$$$$$$$ 
+2019-03-20 10:30:28,159 INFO  [Log] **************************************************************************************** 
+2019-03-20 10:30:36,066 INFO  [Log] Key in username 
+2019-03-20 10:30:36,224 INFO  [Log] Key in password 
+2019-03-20 10:30:37,986 INFO  [Log] Click on log in button 
+2019-03-20 10:30:38,583 INFO  [Log] Verify page header does not contain My Account 
+2019-03-20 10:30:38,583 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2019-03-20 10:30:38,583 INFO  [Log] **************************************************************************************** 
+2019-03-20 10:30:38,583 INFO  [Log] $$$$$$$$$$$$$$$$$$$$$                 Invalid login test       $$$$$$$$$$$$$$$$$$$$$$$$$ 
+2019-03-20 10:30:38,583 INFO  [Log] **************************************************************************************** 
+2019-03-20 10:30:45,825 INFO  [Log] Key in username 
+2019-03-20 10:30:46,037 INFO  [Log] Key in password 
+2019-03-20 10:30:47,740 INFO  [Log] Click on log in button 
+2019-03-20 10:30:48,211 INFO  [Log] Verify page header does not contain My Account 
+2019-03-20 10:30:48,211 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2019-03-20 10:30:52,281 INFO  [Log] Navigate to URL 
+2019-03-20 10:30:54,398 INFO  [Log] Click on sign in button 
+2019-03-20 10:30:54,438 INFO  [Log] **************************************************************************************** 
+2019-03-20 10:30:54,438 INFO  [Log] $$$$$$$$$$$$$$$$$$$$$                 Valid login       $$$$$$$$$$$$$$$$$$$$$$$$$ 
+2019-03-20 10:30:54,438 INFO  [Log] **************************************************************************************** 
+2019-03-20 10:30:54,701 INFO  [Log] Key in username 
+2019-03-20 10:30:54,854 INFO  [Log] Key in password 
+2019-03-20 10:30:57,626 INFO  [Log] Click on log in button 
+2019-03-20 10:30:58,212 INFO  [Log] Verify page header contains My Account 
+2019-03-20 10:30:58,212 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2019-03-20 10:31:01,616 INFO  [Log] Click on sign out button 
+2019-03-20 10:31:05,251 INFO  [Log] Navigate to URL 
+2019-03-20 10:31:07,702 INFO  [Log] Click on sign in button 
+2019-03-20 10:31:07,742 INFO  [Log] **************************************************************************************** 
+2019-03-20 10:31:07,742 INFO  [Log] $$$$$$$$$$$$$$$$$$$$$                 Valid login       $$$$$$$$$$$$$$$$$$$$$$$$$ 
+2019-03-20 10:31:07,742 INFO  [Log] **************************************************************************************** 
+2019-03-20 10:31:07,973 INFO  [Log] Key in username 
+2019-03-20 10:31:08,150 INFO  [Log] Key in password 
+2019-03-20 10:31:10,380 INFO  [Log] Click on log in button 
+2019-03-20 10:31:10,832 INFO  [Log] Verify page header contains My Account 
+2019-03-20 10:31:10,832 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2019-03-20 10:31:10,832 INFO  [Log] **************************************************************************************** 
+2019-03-20 10:31:10,832 INFO  [Log] $$$$$$$$$$$$$$$$$$$$$                 Verify My Account Page       $$$$$$$$$$$$$$$$$$$$$$$$$ 
+2019-03-20 10:31:10,832 INFO  [Log] **************************************************************************************** 
+2019-03-20 10:31:10,890 INFO  [Log] Verify page header contains My Account 
+2019-03-20 10:31:10,957 INFO  [Log] Verify navigation button contains My Account 
+2019-03-20 10:31:11,022 INFO  [Log] Check order button is available 
+2019-03-20 10:31:11,100 INFO  [Log] Check credit slips button is available 
+2019-03-20 10:31:11,163 INFO  [Log] Check get address button is available 
+2019-03-20 10:31:11,213 INFO  [Log] Check information button is available 
+2019-03-20 10:31:11,277 INFO  [Log] Check My Wishlist button is available 
+2019-03-20 10:31:11,277 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2019-03-20 10:31:14,769 INFO  [Log] Click on sign out button 
+2019-03-20 10:31:15,561 INFO  [Log] Close Browser 

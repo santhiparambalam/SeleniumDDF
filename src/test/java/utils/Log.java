@@ -12,7 +12,7 @@ public class Log {
 		Log.info("****************************************************************************************");
 	}
 	 
-	public static void endTestCase(String sTestCaseName){
+	public static void endTestCase(){
 		Log.info("XXXXXXXXXXXXXXXXXXXXXXX             "+"-E---N---D-"+"             XXXXXXXXXXXXXXXXXXXXXX");
 	}
 	   

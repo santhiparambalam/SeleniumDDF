@@ -1,6 +1,8 @@
 package baseclass;
 
 import java.util.NoSuchElementException;
+
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -12,6 +14,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import pageobject.LoginPage;
 import utils.ConfigReader;
+import utils.Log;
 
 
 public class BaseClass {
@@ -38,6 +41,8 @@ public class BaseClass {
 		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		Log.info("Open Browser");
+		DOMConfigurator.configure("log4j.xml");
 		}
 	 }
 	
@@ -45,8 +50,10 @@ public class BaseClass {
 	public static void initiatebrowser()
 	{
 		driver.navigate().to(ConfigReader.getURL());
+		Log.info("Navigate to URL");
 		loginpage=new LoginPage(driver);
 		loginpage.click_signinbutton();
+		Log.info("Click on sign in button");
 		//driver.navigate().refresh();
 	}
 	
@@ -59,6 +66,7 @@ public class BaseClass {
 			if(loginpage.log_out_button.isDisplayed()) 
 		     {
 				loginpage.log_out_button.click();
+				Log.info("Click on sign out button");
 		     }
 		}
 		catch (Exception e)
@@ -71,6 +79,7 @@ public class BaseClass {
 	 public void teardown() 
 	{
 	  	 driver.quit();
+	  	 Log.info("Close Browser");
 	 }
 
 }
